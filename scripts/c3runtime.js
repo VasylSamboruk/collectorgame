@@ -4300,6 +4300,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Arr.Exps.AsJSON,
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.System.Acts.GoToLayout,
+		C3.Plugins.VKBridge.Acts.LeaderSave,
 		C3.Plugins.VKBridge.Acts.AdsMobile,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.AJAX.Cnds.OnComplete,
@@ -4307,7 +4308,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Exps.tokenat,
 		C3.Plugins.AJAX.Exps.LastData,
 		C3.Plugins.Touch.Cnds.OnTapGesture,
-		C3.Plugins.VKBridge.Acts.LeaderSave,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.Arr.Cnds.CompareX,
 		C3.Plugins.System.Cnds.TriggerOnce,
@@ -4316,6 +4316,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.CompareOpacity,
 		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.VKBridge.Acts.LeaderBoardVKUI,
+		C3.Plugins.VKBridge.Acts.ShowWall,
+		C3.Plugins.VKBridge.Acts.ShowInvite,
 		C3.Plugins.VKBridge.Cnds.AdsMobileSuccess,
 		C3.Plugins.Text.Cnds.PickByUID,
 		C3.Plugins.Sprite.Acts.SetSize,
@@ -4385,6 +4387,10 @@ self.C3_JsPropNameTable = [
 	{superFon: 0},
 	{btnNew: 0},
 	{kolodka: 0},
+	{rating_btn: 0},
+	{ratingTXT: 0},
+	{send: 0},
+	{addFriends: 0},
 	{money: 0},
 	{komfort: 0},
 	{speed: 0},
@@ -4667,6 +4673,8 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(19), 1);
 		},
+		() => "Коллекционер! Заходи в игру Коллекционер, зарабатывай монетки, покупай сундучки, получай рандомные подарки. Соревнуйся с друзьями у кого больше комфорта!",
+		() => "https://vk.com/app8131777",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(29), 1);
