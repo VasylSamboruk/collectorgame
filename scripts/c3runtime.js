@@ -4322,6 +4322,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Text.Cnds.PickByUID,
 		C3.Plugins.Sprite.Acts.SetSize,
 		C3.Plugins.VKBridge.Acts.AppGetClient,
+		C3.Plugins.VKBridge.Acts.BridgeConnect,
 		C3.Plugins.Touch.Cnds.OnDoubleTapGesture,
 		C3.Plugins.VKBridge.Cnds.AuthorizationSuccess,
 		C3.Plugins.Text.Exps.Text,
