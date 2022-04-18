@@ -6964,8 +6964,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.CompareOpacity,
 		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.Eponesh_GameScore.Acts.LeaderboardOpen,
-		C3.Plugins.VKBridge.Acts.LeaderBoardVKUI,
-		C3.Plugins.VKBridge.Acts.LeaderBoard,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Eponesh_GameScore.Exps.PlayerScore,
 		C3.Plugins.Eponesh_GameScore.Acts.PlayerSync,
