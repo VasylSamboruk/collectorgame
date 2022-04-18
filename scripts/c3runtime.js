@@ -6964,6 +6964,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.CompareOpacity,
 		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.Eponesh_GameScore.Acts.LeaderboardOpen,
+		C3.Plugins.VKBridge.Acts.LeaderBoardVKUI,
+		C3.Plugins.VKBridge.Acts.LeaderBoard,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Eponesh_GameScore.Exps.PlayerScore,
 		C3.Plugins.Eponesh_GameScore.Acts.PlayerSync,
@@ -7238,7 +7240,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(7), 1500);
+			return () => add(n0.ExpObject(7), 500);
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -7432,7 +7434,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(5), 750);
+			return () => add(n0.ExpObject(5), 200);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7449,7 +7451,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(6), 2350);
+			return () => add(n0.ExpObject(6), 1350);
 		},
 		() => "Save2",
 		() => 1.5,
