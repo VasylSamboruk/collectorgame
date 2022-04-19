@@ -7043,6 +7043,8 @@ self.C3_JsPropNameTable = [
 	{send: 0},
 	{addFriends: 0},
 	{GameScore: 0},
+	{notHaveMoney: 0},
+	{howPlay: 0},
 	{money: 0},
 	{komfort: 0},
 	{speed: 0},
@@ -7410,8 +7412,10 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => and("-", n0.ExpObject(6));
 		},
-		() => 353,
-		() => 363,
+		() => 270,
+		() => 259,
+		() => 275,
+		() => 264,
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
