@@ -6971,6 +6971,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.VKBridge.Acts.ShowWall,
 		C3.Plugins.VKBridge.Acts.ShowInvite,
 		C3.Plugins.VKBridge.Cnds.AdsMobileSuccess,
+		C3.Plugins.Audio.Acts.SetVolume,
 		C3.Plugins.Text.Cnds.PickByUID,
 		C3.Plugins.Sprite.Acts.SetSize,
 		C3.Plugins.VKBridge.Acts.AppGetClient,
@@ -7046,6 +7047,7 @@ self.C3_JsPropNameTable = [
 	{notHaveMoney: 0},
 	{howPlay: 0},
 	{faq: 0},
+	{volumebtn: 0},
 	{money: 0},
 	{tabloHowPlay: 0},
 	{komfort: 0},
@@ -7055,6 +7057,7 @@ self.C3_JsPropNameTable = [
 	{costAvtomatik: 0},
 	{costGift1: 0},
 	{username: 0},
+	{volume: 0},
 	{gift11: 0}
 ];
 }
@@ -7173,6 +7176,7 @@ self.C3_ExpressionFuncs = [
 		() => 6,
 		() => 7,
 		() => 8,
+		() => 9,
 		() => 19,
 		() => 20,
 		() => 21,
@@ -7211,7 +7215,7 @@ self.C3_ExpressionFuncs = [
 			return () => and("-", n0.ExpObject(7));
 		},
 		() => 100,
-		() => "",
+		() => "volume",
 		() => "Saves",
 		() => "https://dca149.ru/save.php",
 		p => {
@@ -7267,7 +7271,6 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(27), 1);
 		},
-		() => 9,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(28), 1);
@@ -7330,6 +7333,7 @@ self.C3_ExpressionFuncs = [
 			return () => add(n0.ExpObject(19), 1);
 		},
 		() => "score",
+		() => "",
 		() => "Коллекционер! Заходи в игру Коллекционер, зарабатывай монетки, покупай сундучки, получай рандомные подарки. Соревнуйся с друзьями у кого больше комфорта!",
 		() => "https://vk.com/app8131777",
 		p => {
@@ -7347,6 +7351,15 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			return () => ((n0.ExpObject(8)) === (0) ? 1 : 0);
+		},
+		() => -100,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(9), 1);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => ((n0.ExpObject(9)) === (0) ? 1 : 0);
 		},
 		() => "loadgame3",
 		p => {
