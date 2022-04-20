@@ -6972,6 +6972,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.VKBridge.Acts.ShowInvite,
 		C3.Plugins.VKBridge.Cnds.AdsMobileSuccess,
 		C3.Plugins.Audio.Acts.SetVolume,
+		C3.Plugins.Audio.Acts.SetSilent,
 		C3.Plugins.Text.Cnds.PickByUID,
 		C3.Plugins.Sprite.Acts.SetSize,
 		C3.Plugins.VKBridge.Acts.AppGetClient,
