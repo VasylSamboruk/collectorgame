@@ -6940,9 +6940,13 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.AJAX.Acts.Post,
 		C3.Plugins.System.Acts.SetGroupActive,
 		C3.Plugins.Sprite.Acts.SetOpacity,
+		C3.Plugins.System.Acts.SetLayerOpacity,
+		C3.Plugins.Arr.Cnds.CompareX,
+		C3.Plugins.System.Cnds.IsGroupActive,
+		C3.Plugins.Touch.Cnds.OnTapGesture,
+		C3.Plugins.Arr.Exps.At,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Text.Acts.SetText,
-		C3.Plugins.Arr.Exps.At,
 		C3.Plugins.Touch.Cnds.OnTouchObject,
 		C3.Plugins.Audio.Acts.Play,
 		C3.Plugins.Arr.Exps.AsJSON,
@@ -6950,19 +6954,17 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.VKBridge.Acts.LeaderSave,
 		C3.Plugins.VKBridge.Acts.AdsMobile,
-		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.AJAX.Cnds.OnComplete,
 		C3.Plugins.Arr.Acts.JSONLoad,
 		C3.Plugins.System.Exps.tokenat,
 		C3.Plugins.AJAX.Exps.LastData,
-		C3.Plugins.Touch.Cnds.OnTapGesture,
 		C3.Plugins.System.Cnds.Every,
-		C3.Plugins.Arr.Cnds.CompareX,
+		C3.Plugins.Sprite.Cnds.CompareOpacity,
+		C3.Plugins.System.Cnds.LayerCmpOpacity,
+		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.System.Exps.random,
-		C3.Plugins.Sprite.Cnds.CompareOpacity,
-		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.Eponesh_GameScore.Acts.LeaderboardOpen,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Eponesh_GameScore.Exps.PlayerScore,
@@ -7049,16 +7051,39 @@ self.C3_JsPropNameTable = [
 	{howPlay: 0},
 	{faq: 0},
 	{volumebtn: 0},
+	{txtNameMain: 0},
+	{btn_plus2: 0},
+	{btn_avtomain2: 0},
+	{btn_avtomain3: 0},
+	{txtNameKK: 0},
+	{txtCostPlus2: 0},
+	{txtCostAvto2: 0},
+	{txtCostAvto3: 0},
+	{btnSunduk1: 0},
+	{btnSundukPaska: 0},
+	{clozeGift: 0},
+	{giftP1: 0},
+	{giftP2: 0},
+	{giftP3: 0},
+	{giftP4: 0},
+	{sundukPaskaOpen: 0},
+	{costSundukPaska: 0},
+	{openPaskaG: 0},
 	{money: 0},
 	{tabloHowPlay: 0},
 	{komfort: 0},
 	{speed: 0},
 	{btnaddcoin: 0},
 	{costPlusOne: 0},
+	{costPlusOne2: 0},
 	{costAvtomatik: 0},
+	{costAvtomatik2: 0},
+	{costAvtomatik3: 0},
 	{costGift1: 0},
+	{costGift2: 0},
 	{username: 0},
 	{volume: 0},
+	{savwEaster: 0},
 	{gift11: 0}
 ];
 }
@@ -7178,6 +7203,9 @@ self.C3_ExpressionFuncs = [
 		() => 7,
 		() => 8,
 		() => 9,
+		() => 10,
+		() => 11,
+		() => 12,
 		() => 19,
 		() => 20,
 		() => 21,
@@ -7189,6 +7217,12 @@ self.C3_ExpressionFuncs = [
 		() => 27,
 		() => 28,
 		() => 29,
+		() => 30,
+		() => 31,
+		() => 32,
+		() => 33,
+		() => 34,
+		() => 35,
 		() => "Load",
 		() => "https://dca149.ru/load.php",
 		p => {
@@ -7199,6 +7233,28 @@ self.C3_ExpressionFuncs = [
 		() => "loadgame",
 		() => "reward",
 		() => "open1",
+		() => 100,
+		() => "EasterIvent",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(34), 3333);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(10), 1000);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(11), 2700);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(12), 5300);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(35), 1);
+		},
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject(1);
@@ -7215,7 +7271,10 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => and("-", n0.ExpObject(7));
 		},
-		() => 100,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => and("-", n0.ExpObject(34));
+		},
 		() => "volume",
 		() => "Saves",
 		() => "https://dca149.ru/save.php",
@@ -7237,6 +7296,60 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			return () => add(n0.ExpObject(1), n1.ExpObject(3));
 		},
+		() => "PaskaSunduk",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject(34);
+		},
+		() => 90,
+		() => "open2",
+		() => "Получаем подарки 2",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(30), 1);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(2), 777);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(31), 1);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(2), 499);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(32), 1);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(2), 233);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(33), 1);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(2), 199);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => subtract(n0.ExpObject(1), n1.ExpObject(34));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(34), 2500);
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0(0, 12);
+		},
+		() => "Sunduk1",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject(7);
@@ -7248,14 +7361,13 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(7), 500);
+			return () => add(n0.ExpObject(7), 570);
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(0, 22);
 		},
 		() => "Получаем подарки 1",
-		() => 90,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(26), 1);
@@ -7276,9 +7388,6 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(28), 1);
 		},
-		() => 10,
-		() => 11,
-		() => 12,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(2), 175);
@@ -7367,17 +7476,14 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => and(n0.ExpObject(3), " /c");
 		},
-		() => 33,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject(19);
 		},
-		() => 34,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject(20);
 		},
-		() => 35,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject(21);
@@ -7422,6 +7528,26 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject(29);
 		},
+		() => 170,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject(30);
+		},
+		() => 171,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject(31);
+		},
+		() => 172,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject(32);
+		},
+		() => 173,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject(33);
+		},
 		() => "Save3",
 		() => "loadgame2",
 		p => {
@@ -7434,7 +7560,19 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
+			return () => and("-", n0.ExpObject(10));
+		},
+		p => {
+			const n0 = p._GetNode(0);
 			return () => and("-", n0.ExpObject(6));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => and("-", n0.ExpObject(11));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => and("-", n0.ExpObject(12));
 		},
 		() => 270,
 		() => 259,
@@ -7445,6 +7583,7 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			return () => add(n0.ExpObject(1), n1.ExpObject(4));
 		},
+		() => "MainingBTN",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject(5);
@@ -7461,7 +7600,24 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(5), 200);
+			return () => multiply(n0.ExpObject(5), 2);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject(10);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => subtract(n0.ExpObject(1), n1.ExpObject(10));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(4), 5);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => multiply(n0.ExpObject(10), 2);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7478,7 +7634,41 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(6), 1350);
+			return () => multiply(n0.ExpObject(6), 2);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject(11);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => subtract(n0.ExpObject(1), n1.ExpObject(11));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(3), 15);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => multiply(n0.ExpObject(11), 2);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject(12);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => subtract(n0.ExpObject(1), n1.ExpObject(12));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => add(n0.ExpObject(3), 33);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => multiply(n0.ExpObject(12), 2);
 		},
 		() => "Save2",
 		() => 1.5,
