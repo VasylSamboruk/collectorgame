@@ -7069,6 +7069,7 @@ self.C3_JsPropNameTable = [
 	{sundukPaskaOpen: 0},
 	{costSundukPaska: 0},
 	{openPaskaG: 0},
+	{TxtProsto: 0},
 	{money: 0},
 	{tabloHowPlay: 0},
 	{komfort: 0},
