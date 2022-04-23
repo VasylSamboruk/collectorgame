@@ -7070,6 +7070,7 @@ self.C3_JsPropNameTable = [
 	{costSundukPaska: 0},
 	{openPaskaG: 0},
 	{TxtProsto: 0},
+	{newBtn: 0},
 	{money: 0},
 	{tabloHowPlay: 0},
 	{komfort: 0},
@@ -7344,7 +7345,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(34), 2500);
+			return () => multiply(n0.ExpObject(34), 2);
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -7362,7 +7363,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(7), 570);
+			return () => multiply(n0.ExpObject(7), 2);
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
