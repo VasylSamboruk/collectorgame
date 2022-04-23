@@ -7345,7 +7345,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => multiply(n0.ExpObject(34), 2);
+			return () => add(n0.ExpObject(34), 5300);
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -7363,7 +7363,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => multiply(n0.ExpObject(7), 2);
+			return () => add(n0.ExpObject(7), 3000);
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -7602,7 +7602,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => multiply(n0.ExpObject(5), 2);
+			return () => add(n0.ExpObject(5), 750);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7619,7 +7619,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => multiply(n0.ExpObject(10), 2);
+			return () => add(n0.ExpObject(10), 2870);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7636,7 +7636,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => multiply(n0.ExpObject(6), 2);
+			return () => add(n0.ExpObject(6), 3500);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7653,7 +7653,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => multiply(n0.ExpObject(11), 2);
+			return () => multiply(n0.ExpObject(11), 7400);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7670,7 +7670,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => multiply(n0.ExpObject(12), 2);
+			return () => add(n0.ExpObject(12), 13000);
 		},
 		() => "Save2",
 		() => 1.5,
